@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Testimonials</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../../css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <!-- Preloader-->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+      </div>
+    </div>
+    <div class="page">
+      <!--RD Navbar-->
+      <header class="section rd-navbar-wrap">
+        <nav class="rd-navbar">
+          <div class="navbar-container">
+            <div class="navbar-cell">
+              <div class="navbar-panel">
+                <button class="navbar-switch" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                <div class="navbar-logo"><a class="navbar-logo-link" href="{{ url_for('index') }}"><img class="navbar-logo-default" src="{{ url_for('static', filename='images/logo-default-113x30.svg') }}" alt="Neon" width="113" height="30" loading="lazy"><img class="navbar-logo-inverse" src="{{ url_for('static', filename='images/logo-inverse-112x30.svg') }}" alt="Neon" width="112" height="30" loading="lazy"></a></div>
+              </div>
+            </div>
+            <div class="navbar-spacer"></div>
+            <div class="navbar-cell navbar-sidebar">
+              <ul class="navbar-navigation rd-navbar-nav fullpage-navigation">
+                <li class="navbar-navigation-root-item" data-menuanchor="ndex.html"><a class="navbar-navigation-root-link" href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li class="navbar-navigation-root-item active" data-menuanchor="estimonials.html"><a class="navbar-navigation-root-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+                </li>
+                <li class="navbar-navigation-root-item active" data-menuanchor="estimonials.html"><a class="navbar-navigation-root-link" href="{{ url_for('testimonials_2') }}">Testimonials 2</a>
+                </li>
+                <li class="navbar-navigation-root-item" data-menuanchor=""><a class="navbar-navigation-root-link" href="#">Pages</a>
+                  <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                    <li class="navbar-navigation-back">
+                      <button class="navbar-navigation-back-btn">Back</button>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('page_404') }}">404 page</a>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('coming_soon') }}">Coming soon</a>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('faq') }}">FAQ</a>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="navbar-cell">
+              <div class="navbar-subpanel">
+                <div class="navbar-subpanel-item">
+                  <button class="navbar-button navbar-info-button mdi-dots-vertical" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                  <div class="navbar-info">
+                    <button class="btn btn-sm" data-modal-trigger='{"target":"#modal-login"}'>Get App</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section class="section section-lg">
+        <div class="container">
+          <h2 class="text-center">What People Say</h2>
+          <div class="row row-offset-sm row-30 row-md-40 row-xl-60 justify-content-center">
+            <div class="col-md-6 col-xl-4">
+              <!-- Quote classic-->
+              <article class="quote quote-classic">
+                <div class="media media-md flex-column flex-xs-row-reverse">
+                  <div class="media-left"><img class="quote-author-image rounded-circle" src="{{ url_for('static', filename='images/persons/person-01-57x57.jpg') }}" alt="" width="57" height="57" loading="lazy">
+                  </div>
+                  <div class="media-body">
+                    <div class="quote-title h5">Making Your Life Easier</div>
+                    <div class="quote-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                    <div class="quote-details"><span class="quote-author-name">John Doue, </span><span class="quote-author-company">SEO &quot;Company&quot;</span></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <!-- Quote classic-->
+              <article class="quote quote-classic">
+                <div class="media media-md flex-column flex-xs-row-reverse">
+                  <div class="media-left"><img class="quote-author-image rounded-circle" src="{{ url_for('static', filename='images/persons/person-02-57x57.jpg') }}" alt="" width="57" height="57" loading="lazy">
+                  </div>
+                  <div class="media-body">
+                    <div class="quote-title h5">Making Your Life Easier</div>
+                    <div class="quote-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                    <div class="quote-details"><span class="quote-author-name">John Doue, </span><span class="quote-author-company">SEO &quot;Company&quot;</span></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <!-- Quote classic-->
+              <article class="quote quote-classic">
+                <div class="media media-md flex-column flex-xs-row-reverse">
+                  <div class="media-left"><img class="quote-author-image rounded-circle" src="{{ url_for('static', filename='images/persons/person-03-57x57.jpg') }}" alt="" width="57" height="57" loading="lazy">
+                  </div>
+                  <div class="media-body">
+                    <div class="quote-title h5">Making Your Life Easier</div>
+                    <div class="quote-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                    <div class="quote-details"><span class="quote-author-name">John Doue, </span><span class="quote-author-company">SEO &quot;Company&quot;</span></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <!-- Quote classic-->
+              <article class="quote quote-classic">
+                <div class="media media-md flex-column flex-xs-row-reverse">
+                  <div class="media-left"><img class="quote-author-image rounded-circle" src="{{ url_for('static', filename='images/persons/person-03-57x57.jpg') }}" alt="" width="57" height="57" loading="lazy">
+                  </div>
+                  <div class="media-body">
+                    <div class="quote-title h5">Making Your Life Easier</div>
+                    <div class="quote-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                    <div class="quote-details"><span class="quote-author-name">John Doue, </span><span class="quote-author-company">SEO &quot;Company&quot;</span></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <!-- Quote classic-->
+              <article class="quote quote-classic">
+                <div class="media media-md flex-column flex-xs-row-reverse">
+                  <div class="media-left"><img class="quote-author-image rounded-circle" src="{{ url_for('static', filename='images/persons/person-04-57x57.jpg') }}" alt="" width="57" height="57" loading="lazy">
+                  </div>
+                  <div class="media-body">
+                    <div class="quote-title h5">Making Your Life Easier</div>
+                    <div class="quote-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                    <div class="quote-details"><span class="quote-author-name">John Doue, </span><span class="quote-author-company">SEO &quot;Company&quot;</span></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <!-- Quote classic-->
+              <article class="quote quote-classic">
+                <div class="media media-md flex-column flex-xs-row-reverse">
+                  <div class="media-left"><img class="quote-author-image rounded-circle" src="{{ url_for('static', filename='images/persons/person-01-57x57.jpg') }}" alt="" width="57" height="57" loading="lazy">
+                  </div>
+                  <div class="media-body">
+                    <div class="quote-title h5">Making Your Life Easier</div>
+                    <div class="quote-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+                    <div class="quote-details"><span class="quote-author-name">John Doue, </span><span class="quote-author-company">SEO &quot;Company&quot;</span></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Modal-->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <h3>Log In</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            <form class="rd-mailform">
+              <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="Your name *" data-constraints="@Required">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password *" data-constraints="@Required">
+              </div>
+              <div class="offset-xxs group-40 d-flex flex-wrap flex-xs-nowrap align-items-center">
+                <button class="btn btn-block" type="submit">Log in</button>
+              </div>
+            </form>
+          </div>
+          <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

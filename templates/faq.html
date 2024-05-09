@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>FAQ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../../css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <!-- Preloader-->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+      </div>
+    </div>
+    <div class="page">
+      <!--RD Navbar-->
+      <header class="section rd-navbar-wrap">
+        <nav class="rd-navbar">
+          <div class="navbar-container">
+            <div class="navbar-cell">
+              <div class="navbar-panel">
+                <button class="navbar-switch" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                <div class="navbar-logo"><a class="navbar-logo-link" href="{{ url_for('index') }}"><img class="navbar-logo-default" src="{{ url_for('static', filename='images/logo-default-113x30.svg') }}" alt="Neon" width="113" height="30" loading="lazy"><img class="navbar-logo-inverse" src="{{ url_for('static', filename='images/logo-inverse-112x30.svg') }}" alt="Neon" width="112" height="30" loading="lazy"></a></div>
+              </div>
+            </div>
+            <div class="navbar-spacer"></div>
+            <div class="navbar-cell navbar-sidebar">
+              <ul class="navbar-navigation rd-navbar-nav fullpage-navigation">
+                <li class="navbar-navigation-root-item" data-menuanchor="ndex.html"><a class="navbar-navigation-root-link" href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li class="navbar-navigation-root-item active" data-menuanchor="estimonials.html"><a class="navbar-navigation-root-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+                </li>
+                <li class="navbar-navigation-root-item active" data-menuanchor="estimonials.html"><a class="navbar-navigation-root-link" href="{{ url_for('testimonials_2') }}">Testimonials 2</a>
+                </li>
+                <li class="navbar-navigation-root-item active" data-menuanchor=""><a class="navbar-navigation-root-link" href="#">Pages</a>
+                  <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                    <li class="navbar-navigation-back">
+                      <button class="navbar-navigation-back-btn">Back</button>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('page_404') }}">404 page</a>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('coming_soon') }}">Coming soon</a>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('faq') }}">FAQ</a>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="navbar-cell">
+              <div class="navbar-subpanel">
+                <div class="navbar-subpanel-item">
+                  <button class="navbar-button navbar-info-button mdi-dots-vertical" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                  <div class="navbar-info">
+                    <button class="btn btn-sm" data-modal-trigger='{"target":"#modal-login"}'>Get App</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section class="section section-lg section-one-screen">
+        <div class="container">
+          <h2 class="text-center">FAQ</h2>
+          <div class="row row-offset-sm row-30 accordion">
+            <div class="col-lg-6">
+              <!-- Accordion-->
+              <article class="accordion-item active">
+                <button class="accordion-head"><span class="accordion-title h5">In what formats are your templates available?</span><span class="accordion-icon"><span class="icon icon-circle icon-sm icon-style-2 mdi-plus"></span></span></button>
+                <div class="accordion-body">
+                  <div class="accordion-text">Website templates are available in Photoshop and HTML formats. Fonts are included with the Photoshop file. In most templates, HTML is compatible with Adobe® Dreamweaver® and Microsoft® FrontPage®.</div>
+                </div>
+              </article>
+              <!-- Accordion-->
+              <article class="accordion-item">
+                <button class="accordion-head"><span class="accordion-title h5">What am I allowed to do with the templates?</span><span class="accordion-icon"><span class="icon icon-circle icon-sm icon-style-2 mdi-plus"></span></span></button>
+                <div class="accordion-body">
+                  <div class="accordion-text">You may build a website using the template in any way you like. You may not resell or redistribute templates (like we do); claim intellectual or exclusive ownership to any of our products, modified or unmodified. All products are property of content providing companies and individuals. You are also not allowed to make more than one project using the same template (you have to purchase the same template once more in order to make another project with the same design).</div>
+                </div>
+              </article>
+              <!-- Accordion-->
+              <article class="accordion-item">
+                <button class="accordion-head"><span class="accordion-title h5">Do you provide any scripts with your templates?</span><span class="accordion-icon"><span class="icon icon-circle icon-sm icon-style-2 mdi-plus"></span></span></button>
+                <div class="accordion-body">
+                  <div class="accordion-text">Our templates do not include any additional scripts. Newsletter subscriptions, search fields, forums, image galleries (in HTML versions of Flash products) are inactive. Basic scripts can be easily added at www.zemez.io If you are not sure that the element you’re interested in is active please contact our Support Chat for clarification.</div>
+                </div>
+              </article>
+            </div>
+            <div class="col-lg-6">
+              <!-- Accordion-->
+              <article class="accordion-item">
+                <button class="accordion-head"><span class="accordion-title h5">What are the advantages of purchasing a website template?</span><span class="accordion-icon"><span class="icon icon-circle icon-sm icon-style-2 mdi-plus"></span></span></button>
+                <div class="accordion-body">
+                  <div class="accordion-text">The major advantage is price: You get a high quality design for just $20-$70. You don’t have to hire a web designer or web design studio. Second advantage is time frame: It usually takes 5-15 days for a good designer to produce a web page of such quality.</div>
+                </div>
+              </article>
+              <!-- Accordion-->
+              <article class="accordion-item">
+                <button class="accordion-head"><span class="accordion-title h5">How can I pay for my order?</span><span class="accordion-icon"><span class="icon icon-circle icon-sm icon-style-2 mdi-plus"></span></span></button>
+                <div class="accordion-body">
+                  <div class="accordion-text">We accept Visa, MasterCard, and American Express credit and debit cards for your convenience.</div>
+                </div>
+              </article>
+              <!-- Accordion-->
+              <article class="accordion-item">
+                <button class="accordion-head"><span class="accordion-title h5">What do I receive when I order a template from Zemez?</span><span class="accordion-icon"><span class="icon icon-circle icon-sm icon-style-2 mdi-plus"></span></span></button>
+                <div class="accordion-body">
+                  <div class="accordion-text">After you complete the payment via our secure form you will receive the instructions for downloading the product. The source files in the download package can vary based on the type of the product you have purchased.</div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Modal-->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <h3>Log In</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            <form class="rd-mailform">
+              <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="Your name *" data-constraints="@Required">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password *" data-constraints="@Required">
+              </div>
+              <div class="offset-xxs group-40 d-flex flex-wrap flex-xs-nowrap align-items-center">
+                <button class="btn btn-block" type="submit">Log in</button>
+              </div>
+            </form>
+          </div>
+          <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

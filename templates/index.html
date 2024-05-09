@@ -1,0 +1,695 @@
+﻿<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+  <body>
+    <!-- Preloader-->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+      </div>
+    </div>
+    <div class="page">
+      <!--RD Navbar-->
+      <header class="section rd-navbar-wrap">
+        <nav class="rd-navbar rd-navbar-sidebar">
+          <div class="navbar-container">
+            <div class="navbar-cell">
+              <div class="navbar-panel">
+                <button class="navbar-switch" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                <div class="navbar-logo">
+                    <a class="navbar-logo-link" href="{{ url_for('index') }}">
+                        <img class="navbar-logo-default" src="{{ url_for('static', filename='images/logo-default-113x30.svg') }}" alt="Neon" width="113" height="30" loading="lazy">
+                    </a>
+                </div>
+            </div>
+            
+            </div>
+            <div class="navbar-spacer"></div>
+            <div class="navbar-cell">
+              <div class="navbar-sidebar">
+                <ul class="navbar-navigation rd-navbar-nav fullpage-navigation">
+                  <li class="navbar-navigation-root-item active" data-menuanchor="ndex.html"><a class="navbar-navigation-root-link" href="{{ url_for('index') }}">Home</a>
+                  <li class="navbar-navigation-root-item" data-menuanchor="estimonials.html"><a class="navbar-navigation-root-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+                  </li>
+                  <li class="navbar-navigation-root-item" data-menuanchor=""><a class="navbar-navigation-root-link" href="#">Pages</a>
+                    <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                      <li class="navbar-navigation-back">
+                        <button class="navbar-navigation-back-btn">Back</button>
+                      </li>
+                      <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('page_404') }}">404 page</a>
+                      </li>
+                      <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('coming_soon') }}">Coming soon</a>
+                      </li>
+                      <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('faq') }}">FAQ</a>
+                      </li>
+                      <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <button class="navbar-switch-2" data-multi-switch='{"targets":".navbar-sidebar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'><span>Menu</span></button>
+            </div>
+            <div class="navbar-cell">
+              <div class="navbar-subpanel">
+                <div class="navbar-subpanel-item">
+                  <button class="navbar-button navbar-info-button mdi-dots-vertical" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                  <div class="navbar-info">
+                    <button class="btn btn-sm" data-modal-trigger='{"target":"#modal-login"}'>Get App</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Intro-->
+      <section class="section" id="home">
+        <div class="container">
+          <div class="swiper-container swiper-pagination-creative" data-swiper='{"scrollbar":{"el":""},"loop":false,"autoplay":{"delay":5000,"disableOnInteraction":false},"breakpoints":{"320":{"autoplay":false},"1200":{"autoplay":{"delay":5000,"disableOnInteraction":false}}}}'>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="row align-items-center justify-content-lg-center flex-md-row-reverse">
+                  <div class="col-md-5 col-lg-4 offset-xxl-1 text-md-center"><img class="mt-md-3 ms-xxl-1 swiper-pagination-creative-image" src="{{ url_for('static', filename='images/image-02-534x572.png') }}" alt="" width="534" height="572" loading="lazy">
+                  </div>
+                  <div class="col-md-7 col-lg-6 col-xxl-5 offset-xl-1">
+                    <h1>Your Everyday Application</h1>
+                    <div class="offset-xxs">
+                      <p class="biggest">Welcome to Neon, an award-winning & easy-to-use mobile application revolutionizing your daily work.</p>
+                    </div>
+                    <div class="offset-sm">
+                      <div class="group-30 offset-sm"><a class="btn ps-1" href="#"><span class="btn-icon icon icon-round icon-sm icon-primary icon-style-3 mdi-apple"></span><span>Apple Store</span></a><a class="btn ps-1" href="#"><span class="btn-icon icon icon-round icon-sm icon-primary icon-style-3 mdi-google-play"></span><span>Google Play</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="row align-items-center justify-content-lg-center flex-md-row-reverse">
+                  <div class="col-md-5 col-lg-4 offset-xxl-1 text-md-center"><img class="mt-md-3 ms-xxl-1 swiper-pagination-creative-image" src="{{ url_for('static', filename='images/image-03-434x609.png') }}" alt="" width="434" height="609" loading="lazy">
+                  </div>
+                  <div class="col-md-7 col-lg-6 col-xxl-5 offset-xl-1">
+                    <h1>Do More Tasks with Neon</h1>
+                    <div class="offset-xxs">
+                      <p class="biggest">Our app was designed to let you manage your time more effectively both at work and at home.</p>
+                    </div>
+                    <div class="offset-sm">
+                      <div class="group-30 offset-sm"><a class="btn ps-1" href="#"><span class="btn-icon icon icon-round icon-sm icon-primary icon-style-3 mdi-apple"></span><span>Apple Store</span></a><a class="btn ps-1" href="#"><span class="btn-icon icon icon-round icon-sm icon-primary icon-style-3 mdi-google-play"></span><span>Google Play</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="row align-items-center justify-content-lg-center flex-md-row-reverse">
+                  <div class="col-md-5 col-lg-4 offset-xxl-1 text-md-center"><img class="mt-md-3 ms-xxl-1 swiper-pagination-creative-image" src="{{ url_for('static', filename='images/image-01-647x551.png') }}" alt="" width="647" height="551" loading="lazy">
+                  </div>
+                  <div class="col-md-7 col-lg-6 col-xxl-5 offset-xl-1">
+                    <h1>Awesome Performance</h1>
+                    <div class="offset-xxs">
+                      <p class="biggest">Neon delivers high performance and a variety of features that you’ll surely appreciate.</p>
+                    </div>
+                    <div class="offset-sm">
+                      <div class="group-30 offset-sm"><a class="btn ps-1" href="#"><span class="btn-icon icon icon-round icon-sm icon-primary icon-style-3 mdi-apple"></span><span>Apple Store</span></a><a class="btn ps-1" href="#"><span class="btn-icon icon icon-round icon-sm icon-primary icon-style-3 mdi-google-play"></span><span>Google Play</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination" data-pagination-progress=""></div>
+            <div class="swiper-counter"><span class="swiper-counter-count">01</span><span class="swiper-counter-divider"></span><span class="swiper-counter-total">03</span></div>
+            <ul class="swiper-soc">
+              <li class="list-social-item"><a class="icon icon-circle icon-style-1 mdi-facebook" href="#"></a></li>
+              <li class="list-social-item"><a class="icon icon-circle icon-style-1 mdi-twitter" href="#"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="form-output snackbar snackbar-secondary" id="form-output-subscribe"></div>
+      </section>
+      <!-- Features-->
+      <section class="section section-md pb-lg-0" id="features">
+        <div class="container">
+          <div class="row row-10">
+            <div class="col-10 col-sm-8 col-lg-6 col-xxl-7 text-center"><img src="{{ url_for('static', filename='images/image-08-698x554.png') }}" alt="" width="698" height="554" loading="lazy">
+            </div>
+            <div class="col-lg-6 col-xxl-5 pb-lg-4">
+              <div class="title-icon group-20 mt-xxl-2"><span class="icon icon-circle icon-lg icon-style-4 mdi-settings"></span>
+                <h2>Quick and Intuitive Profile Configuration</h2>
+              </div>
+              <div class="tab tab-line">
+                <ul class="nav nav-line nav-line-mod-2 bigger">
+                  <li class="nav-item" role="presentation"><a class="nav-link active show" href="#tabs-1-1" data-bs-toggle="tab">How It Works</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-bs-toggle="tab">Statistics</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3" data-bs-toggle="tab">24/7 Support</a></li>
+                </ul>
+                <!-- Tab panes-->
+                <div class="tab-content pt-3">
+                  <div class="tab-pane fade active show" id="tabs-1-1">
+                    <p class="bigger">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a class="btn btn-sm" href="{{ url_for('fullscreen_countdown_video') }}">Explore Now</a>
+                  </div>
+                  <div class="tab-pane fade" id="tabs-1-2">
+                    <div class="row row-30 justify-content-lg-center mt-3 text-center">
+                      <div class="col-6 col-sm-4">
+                              <!-- Counter-->
+                              <article class="counter block block-xxs block-center">
+                                <div class="counter-content">
+                                  <div class="counter-value h3"><span data-counter="">453</span>
+                                  </div>
+                                  <div class="counter-divider">
+                                    <hr class="divider">
+                                  </div>
+                                  <div class="counter-title bigger">Projects</div>
+                                </div>
+                              </article>
+                      </div>
+                      <div class="col-6 col-sm-4">
+                              <!-- Counter-->
+                              <article class="counter block block-xxs block-center">
+                                <div class="counter-content">
+                                  <div class="counter-value h3"><span data-counter="">100</span><span class="counter-postfix">%</span>
+                                  </div>
+                                  <div class="counter-divider">
+                                    <hr class="divider">
+                                  </div>
+                                  <div class="counter-title bigger">Projects</div>
+                                </div>
+                              </article>
+                      </div>
+                      <div class="col-6 col-sm-4">
+                              <!-- Counter-->
+                              <article class="counter block block-xxs block-center">
+                                <div class="counter-content">
+                                  <div class="counter-value h3"><span data-counter="">34</span><span class="counter-postfix">k</span>
+                                  </div>
+                                  <div class="counter-divider">
+                                    <hr class="divider">
+                                  </div>
+                                  <div class="counter-title bigger">Projects</div>
+                                </div>
+                              </article>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="tabs-1-3">
+                    <p class="bigger">Adipiscing inciderint est in. Ius nusquam oportere et, ius ea mazim definiebas scribentur, ne putent verterem necessitatibus.</p><a class="btn btn-sm" href="#">Explore Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Pricing plans-->
+      <section class="section section-lg" id="pricing">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xxl-10">
+              <div class="group-20 d-sm-flex align-items-sm-end justify-content-sm-between text-center">
+                <h2>Pricing Plan</h2>
+                <div>
+                        <!-- Multi switch-->
+                        <div class="switch-text group-25 d-inline-flex align-items-center justify-content-center" id="multiswitch">
+                          <div><span class="switch-text-left biggest">Annual</span><span class="switch-text-right biggest ms-2 border-start ps-2">Monthly</span></div>
+                                <div class="switch-toggle-modern" data-multi-switch='{"targets":"#multiswitch, #pricing-group","state":true}'>
+                                  <div class="guide"></div>
+                                  <div class="slider">
+                                    <div class="slider-dot"></div>
+                                    <div class="slider-dot"></div>
+                                  </div>
+                                </div>
+                        </div>
+                </div>
+              </div>
+              <div class="pricing-group offset-md" id="pricing-group">
+                <!-- Owl Carousel-->
+                <div class="owl-carousel owl-style-1 owl-item-end" data-owl="{&quot;loop&quot;:false,&quot;autoplay&quot;:false,&quot;mouseDrag&quot;:false,&quot;dots&quot;:true,&quot;responsive&quot;:{&quot;768&quot;:{&quot;items&quot;:2},&quot;992&quot;:{&quot;items&quot;:3},&quot;1600&quot;:{&quot;items&quot;:3,&quot;margin&quot;:100}}}">
+                        <!-- Pricing modern-->
+                        <article class="pricing-modern pricing-success block block-sm block-center" data-animate='{"class":"fadeInUp"}'>
+                          <div class="pricing-modern-subtitle">Starter</div>
+                          <div class="pricing-modern-divider">
+                            <hr class="divider">
+                          </div>
+                          <div class="pricing-modern-title h4">Basic</div>
+                          <div class="pricing-modern-text">Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                          <div class="pricing-modern-details"><span class="pricing-modern-price h4"><span class="pricing-month">$14</span><span class="pricing-year">$159</span></span><span class="pricing-modern-period h5"> / <span class="pricing-month">month</span><span class="pricing-year">year</span></span></div>
+                          <div class="pricing-modern-btn">
+                            <button class="btn btn-sm" data-modal-trigger='{"target":"#modal"}'>Select Plan</button>
+                          </div>
+                        </article>
+                        <!-- Pricing modern-->
+                        <article class="pricing-modern pricing-secondary block block-sm block-center" data-animate='{"class":"fadeInUp"}'>
+                          <div class="pricing-modern-subtitle">Personal</div>
+                          <div class="pricing-modern-divider">
+                            <hr class="divider">
+                          </div>
+                          <div class="pricing-modern-title h4">Standard</div>
+                          <div class="pricing-modern-text">Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                          <div class="pricing-modern-details"><span class="pricing-modern-price h4"><span class="pricing-month">$30</span><span class="pricing-year">$350</span></span><span class="pricing-modern-period h5"> / <span class="pricing-month">month</span><span class="pricing-year">year</span></span></div>
+                          <div class="pricing-modern-btn">
+                            <button class="btn btn-sm" data-modal-trigger='{"target":"#modal"}'>Select Plan</button>
+                          </div>
+                        </article>
+                        <!-- Pricing modern-->
+                        <article class="pricing-modern pricing-primary block block-sm block-center" data-animate='{"class":"fadeInUp"}'>
+                          <div class="pricing-modern-subtitle">For team</div>
+                          <div class="pricing-modern-divider">
+                            <hr class="divider">
+                          </div>
+                          <div class="pricing-modern-title h4">Premium</div>
+                          <div class="pricing-modern-text">Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                          <div class="pricing-modern-details"><span class="pricing-modern-price h4"><span class="pricing-month">$50</span><span class="pricing-year">$550</span></span><span class="pricing-modern-period h5"> / <span class="pricing-month">month</span><span class="pricing-year">year</span></span></div>
+                          <div class="pricing-modern-btn">
+                            <button class="btn btn-sm" data-modal-trigger='{"target":"#modal"}'>Select Plan</button>
+                          </div>
+                        </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Modal-->
+      <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body text-center">
+              <h4>Get an offer for<br>a basic plan</h4>
+              <!--RD Mailform-->
+              <form class="rd-mailform" data-form-output="modal-form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="name" placeholder="Your name *" data-constraints="@Required">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="email" name="email" placeholder="Your E-mail *" data-constraints="@Email @Required">
+                </div>
+                <div class="offset-xs">
+                  <button class="btn btn-block" type="submit">Send Request</button>
+                </div>
+              </form>
+            </div>
+            <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="form-output snackbar snackbar-secondary" id="modal-form-output-global"></div>
+      <!-- About-->
+      <section class="section section-lg" id="about">
+        <div class="container">
+          <div class="row row-30">
+            <div class="col-lg-6 col-xl-5">
+              <div class="team-mini-wrap bg-image" style="background-image: url_for('static', filename='images/image-21-574x528.png')">
+                      <!-- Team mini-->
+                      <article class="team-mini team-mini-1 team-mini-secondary"><a class="team-mini-figure" href="#"><img class="team-mini-image" src="{{ url_for('static', filename='images/persons/person-01-114x114.jpg') }}" alt="" width="114" height="114" loading="lazy"></a>
+                        <h5 class="team-mini-name"><a href="#">Talha Bilal</a></h5>
+                        <div class="team-mini-position">Product Manager</div>
+                      </article>
+                      <!-- Team mini-->
+                      <article class="team-mini team-mini-2"><a class="team-mini-figure" href="#"><img class="team-mini-image" src="{{ url_for('static', filename='images/persons/person-02-114x114.jpg') }}" alt="" width="114" height="114" loading="lazy"></a>
+                        <h5 class="team-mini-name"><a href="#">Ahmed Ali</a></h5>
+                        <div class="team-mini-position">CEO “Neon”</div>
+                      </article>
+                      <!-- Team mini-->
+                      <article class="team-mini team-mini-3 team-mini-success"><a class="team-mini-figure" href="#"><img class="team-mini-image" src="{{ url_for('static', filename='images/persons/person-03-114x114.jpg') }}" alt="" width="114" height="114" loading="lazy"></a>
+                        <h5 class="team-mini-name"><a href="#">Asad Noor</a></h5>
+                        <div class="team-mini-position">UI Designer</div>
+                      </article>
+                      <!-- Team mini-->
+                      <article class="team-mini team-mini-4"><a class="team-mini-figure" href="#"><img class="team-mini-image" src="{{ url_for('static', filename='images/persons/person-04-114x114.jpg') }}" alt="" width="114" height="114" loading="lazy"></a>
+                        <h5 class="team-mini-name"><a href="#">Mahad Munir</a></h5>
+                        <div class="team-mini-position">Lead Developer</div>
+                      </article>
+              </div>
+            </div>
+            <div class="col-lg-6 col-xl-7">
+              <div class="tab tab-modern">
+                <ul class="nav nav-modern bigger">
+                  <li class="nav-item" role="presentation"><a class="nav-link active show" href="#tabs-3-1" data-bs-toggle="tab"><span class="position-relative">About</span></a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-3-2" data-bs-toggle="tab"><span class="position-relative">Features</span></a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-3-3" data-bs-toggle="tab"><span class="position-relative">Team</span></a></li>
+                </ul>
+                <!-- Tab panes-->
+                <div class="tab-content">
+                  <div class="tab-pane fade active show" id="tabs-3-1">
+                    <h2>A Few Words About Us</h2>
+                    <p class="bigger">Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="bigger">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    <div class="offset-sm"><a class="btn btn-sm pe-1" href="{{ url_for('fullscreen_countdown_video') }}"><span>Learn More</span><span class="btn-icon icon icon-circle icon-xs icon-style-2 ms-5 mdi-arrow-right"></span></a></div>
+                  </div>
+                  <div class="tab-pane fade" id="tabs-3-2">
+                    <h2>A Few Words About Us</h2>
+                    <p class="bigger">Cur turpis messis? Ubi est gratis ausus? Cobaltum brevis species est. Lubas observare in clemens tubinga! Cum clabulare peregrinationes, omnes bromiumes anhelare brevis.</p>
+                    <p class="bigger">Gratis, primus pulchritudines absolute captis de varius, lotus sensorem. Experimentum cito ducunt ad peritus mineralis. Lacta de velox accola, consumere racana! Cur lapsus experimentum?</p>
+                    <div class="offset-sm"><a class="btn btn-sm pe-1" href="{{ url_for('fullscreen_countdown_video') }}"><span>Learn More</span><span class="btn-icon icon icon-circle icon-xs icon-style-2 ms-5 mdi-arrow-right"></span></a></div>
+                  </div>
+                  <div class="tab-pane fade" id="tabs-3-3">
+                    <h2>A Few Words About Us</h2>
+                    <p class="bigger">Vae. Cum extum accelerare, omnes messores locus secundus, clemens vortexes. Consiliums volare in hortus! Varius, alter ignigenas unus attrahendam de brevis, talis aonides.</p>
+                    <p class="bigger">A falsis, compater fidelis fluctus. A falsis, silva azureus danista. Cum domus ridetis, omnes messores visum placidus, grandis adiuratores. Est regius ignigena, cesaris. Placidus, noster cursuss superbe.</p>
+                    <div class="offset-sm"><a class="btn btn-sm pe-1" href="{{ url_for('fullscreen_countdown_video') }}"><span>Learn More</span><span class="btn-icon icon icon-circle icon-xs icon-style-2 ms-5 mdi-arrow-right"></span></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Get in touch-->
+      <section class="section section-lg" id="contacts">
+        <div class="container">
+          <div class="row row-30 align-items-xl-center justify-content-xxl-between">
+            <div class="col-lg-6">
+              <h2>Get in Touch</h2>
+              <p class="bigger">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+              <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                <div class="row row-30">
+                  <div class="col-xs-6">
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="name" placeholder="Your name *" data-constraints="@Required">
+                    </div>
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="form-group">
+                      <input class="form-control" type="email" name="email" placeholder="Your e-mail address *" data-constraints="@Email @Required">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <textarea class="form-control" name="question" placeholder="Your question" rows="5" data-constraints="@Required"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-sm group-40 d-flex flex-wrap flex-xs-nowrap align-items-center">
+                  <button class="btn" type="submit">Subscribe</button>
+                        <!-- Checkbox-->
+                        <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" type="checkbox" id="check1">
+                          <label class="custom-control-label" for="check1">Lorem ipsum dolor sit amet, consectetur adipiscing.
+                          </label>
+                        </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-6 col-xxl-5">
+              <div class="box px-xl-3 px-xxl-4">
+                <div class="row row-30">
+                  <div class="col-md-6 col-lg-12 col-xl-6">
+                    <h4>Get The App:</h4>
+                    <div class="group-30 offset-sm"><a class="btn ps-1" href="#"><span class="btn-icon icon icon-round icon-sm icon-primary icon-style-3 mdi-apple"></span><span>Apple Store</span></a><a class="btn ps-1" href="#"><span class="btn-icon icon icon-round icon-sm icon-primary icon-style-3 mdi-google-play"></span><span>Google Play</span></a></div>
+                  </div>
+                  <div class="col-md-6 col-lg-12 col-xl-6">
+                    <h4>Contacts:</h4>
+                    <table class="table table-sm table-responsive-xl table-no-bordered bigger">
+                      <tbody>
+                        <tr>
+                          <td class="text-end text-600 ps-0 align-middle">Ph.</td>
+                          <td class="biggest"><a class="link-inherit" href="tel:#">1-800-901-234</a></td>
+                        </tr>
+                        <tr>
+                          <td class="text-end text-600 ps-0">Mail.</td>
+                          <td><a class="link-inherit" href="mailto:#">info@demolink.org</a></td>
+                        </tr>
+                        <tr>
+                          <td class="text-end text-600 ps-0">Office.</td>
+                          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <hr class="divider">
+                <div class="group-20 d-flex flex-wrap align-items-center justify-content-between">
+                  <div>
+                          <!-- List social-->
+                          <ul class="list list-social">
+                            <li class="list-social-item"><a class="icon icon-circle icon-md icon-style-1 mdi-facebook" href="#"></a></li>
+                            <li class="list-social-item"><a class="icon icon-circle icon-md icon-style-1 mdi-twitter" href="#"></a></li>
+                            <li class="list-social-item"><a class="icon icon-circle icon-md icon-style-1 mdi-youtube-play" href="#"></a></li>
+                          </ul>
+                  </div>
+                  <div>
+                    <p class="rights bigger"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>Neon</span><span>.&nbsp;</span><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-output snackbar snackbar-secondary" id="form-output-global"></div>
+      </section>
+      <!-- News-->
+      <section class="section section-lg">
+        <div class="container">
+          <div class="row row-30">
+            <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5">
+              <div class="slick-slider" id="child-carousel" data-slick='{"infinite":false,"arrows":false,"asNavFor":"#carousel-parent"}'>
+                <div>
+                        <!-- Post modern-->
+                        <article class="post-modern">
+                          <h4 class="post-modern-title"><a href="#">Top 5 Mobile Apps for Successful Time Management: What to Choose if You are on Android and Want to Save Money</a></h4>
+                          <div class="post-modern-time h5">
+                            <time datetime="2023">Jan 10, 2023</time>
+                          </div>
+                        </article>
+                </div>
+                <div>
+                        <!-- Post modern-->
+                        <article class="post-modern">
+                          <h4 class="post-modern-title"><a href="#">Top 5 Mobile Apps for Successful Time Management: What to Choose if You are on Android and Want to Save Money</a></h4>
+                          <div class="post-modern-time h5">
+                            <time datetime="2023">Jan 10, 2023</time>
+                          </div>
+                        </article>
+                </div>
+                <div>
+                        <!-- Post modern-->
+                        <article class="post-modern">
+                          <h4 class="post-modern-title"><a href="#">Top 5 Mobile Apps for Successful Time Management: What to Choose if You are on Android and Want to Save Money</a></h4>
+                          <div class="post-modern-time h5">
+                            <time datetime="2023">Jan 10, 2023</time>
+                          </div>
+                        </article>
+                </div>
+              </div>
+              <div class="slick-slider mt-3" id="carousel-parent" data-slick='{"infinite":false,"asNavFor":"#child-carousel"}'>
+                <div>
+                  <div class="image-hover"><img src="{{ url_for('static', filename='images/image-11-660x409.jpg') }}" alt="" width="660" height="409" loading="lazy">
+                  </div>
+                </div>
+                <div>
+                  <div class="image-hover"><img src="{{ url_for('static', filename='images/image-12-660x409.jpg') }}" alt="" width="660" height="409" loading="lazy">
+                  </div>
+                </div>
+                <div>
+                  <div class="image-hover"><img src="{{ url_for('static', filename='images/image-13-660x409.jpg') }}" alt="" width="660" height="409" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-xl-6 offset-xl-1 col-xxl-4 offset-xxl-2">
+              <p class="bigger">Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor.</p>
+              <p class="bigger">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit.</p>
+              <ul class="list list-marked list-secondary list-2-column block block-lg">
+                <li class="list-item">Task Management</li>
+                <li class="list-item">Reminders</li>
+                <li class="list-item">Messaging</li>
+                <li class="list-item">Regular Updates</li>
+              </ul>
+              <h5 class="fw-normal indent-negative-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
+              <div class="offset-xs">
+                <p class="bigger">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+              </div>
+              <div class="offset-xs group-20 d-flex flex-wrap align-items-center">
+                <div>Share This Post</div>
+                <div>
+                        <!-- List social-->
+                        <ul class="list list-social">
+                          <li class="list-social-item"><a class="icon icon-circle icon-md icon-style-1 mdi-facebook" href="#"></a></li>
+                          <li class="list-social-item"><a class="icon icon-circle icon-md icon-style-1 mdi-twitter" href="#"></a></li>
+                          <li class="list-social-item"><a class="icon icon-circle icon-md icon-style-1 mdi-youtube-play" href="#"></a></li>
+                        </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Features-->
+      <section class="section section-lg">
+        <div class="blurb-creative-wrap">
+          <svg class="image-svg position-absolute d-none d-xl-block" style="top: 0; left: 0" width="1920" height="412" viewbox="0 0 1920 412" fill="none">
+            <path opacity="0.3" d="M0 235.992C0 235.992 178.218 424.558 319.5 410.5C460.782 396.442 564.476 269.165 722.686 263.543C880.895 257.921 977.722 429.791 1147 391C1316.28 352.209 1486.6 58.563 1920 1" stroke="#6B6F77"></path>
+          </svg>
+          <div class="container">
+            <h2 class="blurb-creative-heading">
+              Quick and Intuitive
+              <br>
+              Profile Configuration
+            </h2>
+            <div class="row row-30">
+              <div class="col-sm-6 col-lg-3 blurb-creative-item">
+                      <!-- Blurb creative-->
+                      <article class="blurb blurb-creative blurb-creative-1">
+                        <div class="blurb-embed"><span class="blurb-icon icon icon-circle icon-xl icon-primary icon-style-4 mdi-cursor-default"></span></div>
+                        <div class="blurb-body">
+                          <div class="blurb-title h5"><span class="text-primary">01.</span> Install the App</div>
+                          <div class="blurb-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
+                        </div>
+                      </article>
+              </div>
+              <div class="col-sm-6 col-lg-3 blurb-creative-item">
+                      <!-- Blurb creative-->
+                      <article class="blurb blurb-creative blurb-creative-2">
+                        <div class="blurb-embed"><span class="blurb-icon icon icon-circle icon-xl icon-primary icon-style-4 mdi-settings"></span></div>
+                        <div class="blurb-body">
+                          <div class="blurb-title h5"><span class="text-primary">02.</span> Configure Neon</div>
+                          <div class="blurb-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
+                        </div>
+                      </article>
+              </div>
+              <div class="col-sm-6 col-lg-3 blurb-creative-item">
+                      <!-- Blurb creative-->
+                      <article class="blurb blurb-creative blurb-creative-3">
+                        <div class="blurb-embed"><span class="blurb-icon icon icon-circle icon-xl icon-primary icon-style-4 mdi-chart-arc"></span></div>
+                        <div class="blurb-body">
+                          <div class="blurb-title h5"><span class="text-primary">03.</span> Add a Task</div>
+                          <div class="blurb-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
+                        </div>
+                      </article>
+              </div>
+              <div class="col-sm-6 col-lg-3 blurb-creative-item">
+                      <!-- Blurb creative-->
+                      <article class="blurb blurb-creative blurb-creative-4">
+                        <div class="blurb-embed"><span class="blurb-icon icon icon-circle icon-xl icon-primary icon-style-4 mdi-rocket"></span></div>
+                        <div class="blurb-body">
+                          <div class="blurb-title h5"><span class="text-primary">04.</span> Get Results</div>
+                          <div class="blurb-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
+                        </div>
+                      </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Our partners-->
+      <section class="section section-lg">
+        <div class="container">
+          <h2 class="text-center">Our Partners</h2>
+          <div class="row row-offset-xl g-0 partner-group">
+            <div class="col-4 col-sm-3 partner-group-item"><a class="partner" href="#"><img class="partner-image" src="{{ url_for('static', filename='images/partners/partner-01-200x60.png') }}" alt="" width="200" height="60" loading="lazy"></a></div>
+            <div class="col-4 col-sm-3 partner-group-item"><a class="partner" href="#"><img class="partner-image" src="{{ url_for('static', filename='images/partners/partner-02-200x60.png') }}" alt="" width="200" height="60" loading="lazy"></a></div>
+            <div class="col-4 col-sm-3 partner-group-item"><a class="partner" href="#"><img class="partner-image" src="{{ url_for('static', filename='images/partners/partner-01-200x60.png') }}" alt="" width="200" height="60" loading="lazy"></a></div>
+            <div class="col-4 col-sm-3 partner-group-item"><a class="partner" href="#"><img class="partner-image" src="{{ url_for('static', filename='images/partners/partner-02-200x60.png') }}" alt="" width="200" height="60" loading="lazy"></a></div>
+            <div class="col-4 col-sm-3 partner-group-item"><a class="partner" href="#"><img class="partner-image" src="{{ url_for('static', filename='images/partners/partner-02-200x60.png') }}" alt="" width="200" height="60" loading="lazy"></a></div>
+            <div class="col-4 col-sm-3 partner-group-item"><a class="partner" href="#"><img class="partner-image" src="{{ url_for('static', filename='images/partners/partner-01-200x60.png') }}" alt="" width="200" height="60" loading="lazy"></a></div>
+            <div class="col-4 col-sm-3 partner-group-item"><a class="partner" href="#"><img class="partner-image" src="{{ url_for('static', filename='images/partners/partner-02-200x60.png') }}" alt="" width="200" height="60" loading="lazy"></a></div>
+            <div class="col-4 col-sm-3 partner-group-item"><a class="partner" href="#"><img class="partner-image" src="{{ url_for('static', filename='images/partners/partner-01-200x60.png') }}" alt="" width="200" height="60" loading="lazy"></a></div>
+          </div>
+        </div>
+      </section>
+      <!-- What People Say-->
+      <section class="section section-lg">
+        <div class="container">
+          <h2 class="text-center">What People Say</h2>
+          <div class="row row-offset-lg justify-content-center">
+            <div class="col-lg-10 col-xl-9 col-xxl-8">
+              <div class="owl-carousel owl-visible" data-owl="{&quot;dots&quot;:true,&quot;margin&quot;:60,&quot;responsive&quot;:{&quot;1200&quot;:{&quot;margin&quot;:110},&quot;1600&quot;:{&quot;margin&quot;:160}}}">
+                      <!-- Quote creative-->
+                      <article class="quote quote-creative">
+                        <div class="quote-body">
+                          <div class="quote-author-name h4">John Doue</div>
+                          <div class="quote-time bigger">
+                            <time datetime="2023">Jan 10, 2023</time>
+                          </div>
+                          <div class="quote-text bigger">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Website templates are available in Photoshop and HTML formats. Fonts are included with the Photoshop file.</div>
+                          <div class="quote-author-company">SEO “Company”</div>
+                        </div>
+                      </article>
+                      <!-- Quote creative-->
+                      <article class="quote quote-creative">
+                        <div class="quote-body">
+                          <div class="quote-author-name h4">Kevin McMillan</div>
+                          <div class="quote-time bigger">
+                            <time datetime="2023">Jan 10, 2023</time>
+                          </div>
+                          <div class="quote-text bigger">With the help of Neon, getting routine tasks done is a lot easier now. Their unique tools allow me to pay more attention to other vital processes rather than various tasks that don’t require my constant intervention.</div>
+                          <div class="quote-author-company">Founder, “2M Analytics”</div>
+                        </div>
+                      </article>
+                      <!-- Quote creative-->
+                      <article class="quote quote-creative">
+                        <div class="quote-body">
+                          <div class="quote-author-name h4">Eva Adams</div>
+                          <div class="quote-time bigger">
+                            <time datetime="2023">Jan 10, 2023</time>
+                          </div>
+                          <div class="quote-text bigger">Your app is the best choice for my business and I have tried a lot of workflow management apps before. Your product satisfies the needs of my company and its employees to the fullest extent, especially in HR management. Thank you!</div>
+                          <div class="quote-author-company">Regional Manager, “HMZ Ltd.”</div>
+                        </div>
+                      </article>
+                      <!-- Quote creative-->
+                      <article class="quote quote-creative">
+                        <div class="quote-body">
+                          <div class="quote-author-name h4">John Williams</div>
+                          <div class="quote-time bigger">
+                            <time datetime="2023">Jan 10, 2023</time>
+                          </div>
+                          <div class="quote-text bigger">Neon is absolutely delightful! I use it for managing my current business projects and it gives amazing results. It has everything for proper time management &amp; project development, and a lot more, which is just what I need for my business.</div>
+                          <div class="quote-author-company">CEO, “iStep”</div>
+                        </div>
+                      </article>
+                      <!-- Quote creative-->
+                      <article class="quote quote-creative">
+                        <div class="quote-body">
+                          <div class="quote-author-name h4">Kate Richards</div>
+                          <div class="quote-time bigger">
+                            <time datetime="2023">Jan 10, 2023</time>
+                          </div>
+                          <div class="quote-text bigger">Your app has everything our company needs for managing the work of our branch offices and international departments. Neon allowed us to achieve better results in managing wholesale process and developing better products for our clients.</div>
+                          <div class="quote-author-company">Sales Manager, “Evolve Co.”</div>
+                        </div>
+                      </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Modal-->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <h3>Log In</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            <form class="rd-mailform">
+              <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="Your name *" data-constraints="@Required">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password *" data-constraints="@Required">
+              </div>
+              <div class="offset-xxs group-40 d-flex flex-wrap flex-xs-nowrap align-items-center">
+                <button class="btn btn-block" type="submit">Log in</button>
+              </div>
+            </form>
+          </div>
+          <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

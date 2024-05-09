@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>404 Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../../css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <!-- Preloader-->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+      </div>
+    </div>
+    <div class="page">
+      <section class="section section-one-screen text-center justify-content-between">
+        <div class="section-one-screen-header">
+          <!--Brand--><a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='images/logo-default-113x30.svg') }}" alt="" width="113" height="30" loading="lazy"></a>
+        </div>
+        <div class="section-one-screen-body">
+          <div class="container">
+            <div class="heading-creative"><span>4</span><img class="heading-creative-image" src="{{ url_for('static', filename='images/image-20-217x198.png') }}" alt="" width="217" height="198" loading="lazy"><span>4</span>
+            </div>
+            <h4>Page Not Found</h4>
+            <div class="offset-sm"><a class="btn" href="{{ url_for('index') }}">Go to Home Page</a></div>
+          </div>
+        </div>
+        <div class="section-one-screen-footer"></div>
+      </section>
+    </div>
+    <!-- Modal-->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <h3>Log In</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            <form class="rd-mailform">
+              <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="Your name *" data-constraints="@Required">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password *" data-constraints="@Required">
+              </div>
+              <div class="offset-xxs group-40 d-flex flex-wrap flex-xs-nowrap align-items-center">
+                <button class="btn btn-block" type="submit">Log in</button>
+              </div>
+            </form>
+          </div>
+          <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

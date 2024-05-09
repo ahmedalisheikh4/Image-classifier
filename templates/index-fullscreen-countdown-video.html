@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Page Title-->
+    <title>Image Classifier</title>
+
+    <!-- Meta Tags-->
+    <meta name="description" content="Ignite - functional and beautifully designed coming soon and landing page template to kick-start your project">
+    <meta name="keywords" content="ignite, coming soon, under construction, template, coming soon page, html5, css3, fashion, elegant">
+    <meta name="author" content="mix_design">
+
+    <!-- Viewport Meta-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Template Favicon & Icons Start -->
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon/favicon.ico') }}" sizes="any">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/favicon/apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='img/favicon/manifest.webmanifest') }}">
+    <!-- Template Favicon & Icons End -->
+
+    <!-- Facebook Metadata Start -->
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:title" content="Ignite - Coming Soon and Landing Page Template">
+    <meta property="og:description" content="Ignite - functional and beautifully designed coming soon and landing page template to kick-start your project">
+    <meta property="og:url" content="http://mixdesign.club/themeforest/ignite/">
+    <meta property="og:image" content="http://mixdesign.club/themeforest/ignite/favicon/og-image.jpg">
+    <!-- Facebook Metadata End -->
+
+    <!-- Template Styles Start -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/loaders/loader.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/plugins.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- Template Styles End -->
+
+    <!-- Custom Browser Color Start -->
+    <meta name="theme-color" content="#0c0c0c">
+    <meta name="msapplication-navbutton-color" content="#0c0c0c">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0c0c0c">
+    <!-- Custom Browser Color End -->
+  </head>
+  <style>
+    /* Add CSS to align buttons side by side */
+    .headline__btnholder {
+    display: flex;
+    align-items: center;
+    }
+
+    #image-upload {
+        display: none;
+    }
+
+    /* CSS for the classification result */
+    .classification-result {
+        margin-top: 170px;
+        margin-left: -210px; /* Adjust margin-top as needed */
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+    }
+
+  </style>
+
+  <body>
+
+    <!-- Loader Start -->
+    <div class="loader">
+      <div class="loader">
+        <div class="loader__content">
+          <div class="loader__logo">
+            <img class="navbar-logo-default" src="{{ url_for('static', filename='images/logo-default-113x30.svg') }}" alt="Neon" width="113" height="30" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Loader End -->
+
+    <!-- Navigation Start -->
+    <nav id="nav" class="nav">
+      <div class="nav__container">
+        <!-- menu background -->
+        <div class="nav__background"></div>
+        <div class="nav__content text-center">
+          <ul class="navigation">
+            <li>
+              <a id="home-trigger" class="nav__link" href="#0">
+                <span class="link-title">Image Classifier</span>
+                <span class="link-hover">CNN</span>
+              </a>
+            </li>
+            <li>
+              <a id="about-trigger" class="nav__link" href="#0">
+                <span class="link-title">Technology</span>
+                <span class="link-hover">Used</span>
+              </a>
+            </li>
+            <li>
+              <a id="works-trigger" class="nav__link" href="#0">
+                <span class="link-title">Project</span>
+                <span class="link-hover">Feature</span>
+              </a>
+            </li>
+            <li>
+              <a id="contact-trigger" class="nav__link" href="#0">
+                <span class="link-title">Contact</span>
+                <span class="link-hover">Us</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navigation End -->
+
+    <!-- Header Start -->
+    <header id="header" class="header full">
+      <div class="container-fluid px-0 fullheight-mobile">
+        <div class="row gx-0 fullheight-mobile">
+          <div class="col-6 fullheight-mobile header__left">
+
+            <!-- Logo Start -->
+            <div class="logo">
+              <a class="navbar-logo-link" href="{{ url_for('index') }}"><img class="navbar-logo-default" src="{{ url_for('static', filename='images/logo-default-113x30.svg') }}" alt="Neon" width="113" height="30" loading="lazy"></a>
+            </div>
+            <!-- Logo End -->
+
+          </div>
+          <div class="col-6 fullheight header__right">
+
+            <!-- Say Hello Button Start -->
+            <a href="#0" id="sayhello-trigger" class="btn btn-s sayhello-trigger">
+              <i class="fa-solid fa-pencil"></i>
+              <span class="title">Say Hello</span>
+              <span class="hover">Say Hello</span>
+            </a>
+            <!-- Say Hello Button End -->
+
+            <!-- Menu Trigger Start -->
+            <div class="menu-button">
+              <a href="#0" id="menu-trigger" class="menu-trigger">
+                <span class="burger"></span>
+                <span class="circle"></span>
+              </a>
+            </div>
+            <!-- Menu Trigger End -->
+
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main Section Start -->
+    <section id="main" class="main full">
+      <div class="fullscreen-wrapper">
+
+        <!-- Fullscreen Background Start-->
+        <div class="fullscreen-bg media-full-1">
+          <!-- local video background -->
+          <div class="video-background">
+            <video id="main-video" preload="auto" autoplay="autoplay" loop="loop" muted="muted" poster="static/img/backgrounds/1920x1080-video-1.webp">
+              <source type="video/mp4" src="{{ url_for('static', filename='video/video.mp4') }}">
+              <source type="video/webm" src="{{ url_for('static', filename='video/video.webm') }}">
+              <source type="video/ogv" src="{{ url_for('static', filename='video/video.ogv') }}">
+            </video>
+          </div>
+          <!-- Dark gradient cover layer -->
+          <div class="color-layer layer-dark-03"></div>
+        </div>
+        <!-- Fullscreen Background End-->
+
+        <!-- Main Section Content Start -->
+        <div class="main__content fullheight-mobile">
+          <div class="container-fluid px-0 fullheight-mobile">
+            <div class="row gx-0 fullheight-mobile">
+
+              <!-- Main Section Intro Start -->
+              <div class="col-12 main__intro fullheight-mobile">
+
+                <!-- Main Intro Content Start -->
+                <div class="intro__content fullheight-mobile">
+
+                  <!-- Headline Start -->
+                  <div id="headline" class="headline centered-mobile text-center">
+                    <span class="headline__subtitle">See you soon</span>
+                    <div class="d-md-flex align-items-md-center justify-content-md-center">
+                        <h1 class="headline__title title-centered">We'll be back in&nbsp;</h1>
+                        <div class="media__countdown">
+                            <div id="countdown"></div>
+                        </div>
+                    </div>
+                    <div class="headline__btnholder" style="margin-left: 40%;">
+                      <!-- Add an input field for uploading images -->
+                      <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                      <a href="#" id="upload-trigger" class="btn btn-l btn-light">
+                          <span class="btn-title">Upload</span>
+                          <span class="btn-hover">Data</span>
+                      </a>
+                      <a href="https://vimeo.com/65036292" id="showreel-trigger" class="btn btn-l-icon btn-outline-light">
+                          <span class="btn-icon-title">Play Showreel</span>
+                          <span class="btn-icon-anim"><i class="fa-solid fa-play"></i></span>
+                      </a>
+                      <!-- Line break -->
+                      <br>
+                      <!-- Display classification result -->
+                      <div id="classification-result" class="classification-result"></div>
+                  </div>
+                  
+                </div>
+                  <!-- Headline End -->
+
+
+
+                </div>
+                <!-- Main Intro Content End -->
+
+                <!-- Footer Mobile Start -->
+                <div class="footer-mobile full">
+                  <div class="container-mobile fullheight-mobile d-flex align-items-center">
+                    <div class="container-fluid px-0">
+                      <div class="row gx-0">
+                        <div class="col-6 text-start footer-mobile__socials">
+                          <!-- Home screen socials links -->
+                          <ul class="socials d-flex align-items-start">
+                            <li>
+                              <a class="btn btn-s-text" href="https://www.facebook.com/" target="_blank">
+                                <span class="title">Fb</span>
+                                <span class="hover">Fb</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="btn btn-s-text" href="https://www.instagram.com" target="_blank">
+                                <span class="title">In</span>
+                                <span class="hover">In</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="btn btn-s-text" href="https://twitter.com/" target="_blank">
+                                <span class="title">Tw</span>
+                                <span class="hover">Tw</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="btn btn-s-text" href="https://www.behance.net/" target="_blank">
+                                <span class="title">Be</span>
+                                <span class="hover">Be</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-6 text-end footer-mobile__copyright">
+                          <p class="copyright bright">
+                            <i class="fa-regular fa-copyright"></i>
+                            <a class="contact-link" href="https://1.envato.market/EKA9WD" target="_blank">Mix Design</a>,
+                            2024
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <!-- Footer Mobile End -->
+
+              </div>
+              <!-- Main Section Intro End -->
+
+            </div>
+          </div>
+        </div>
+        <!-- Main Section Content End -->
+
+      </div>
+    </section>
+    <!-- Main Section End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="inner about">
+      
+      <!-- Inner Section Content Start -->
+      <div class="inner__content fullheight">
+        <div class="container-fluid px-0 fullheight">
+          <div class="row gx-0 flex-xl-row-reverse fullheight">
+
+            <!-- Inner Section Info Part Start -->
+            <div class="col-12 col-xl-6 inner__info">
+              <div class="blocks-container">
+
+                <!-- Inner Content Block Title Start -->
+                <div class="content-block">
+                  <span class="block__subtitle">01 / About Us</span>
+                  <h2 class="block__title">Creativity is above all. Just awesome template.</h2>
+                  <p class="block__text">I wonder if I've been changed in the night? <a href="#0" class="text-link">Let me think.</a> Was I the same when I got up this morning?
+                    I almost think I can remember feeling a little different. 
+                    But if I'm not the same, the next question is 'Who in the world am I?' Ah, that's the great puzzle!
+                  </p>
+                </div>
+                <!-- Inner Content Block Title End -->
+
+                <!-- Inner Content Block Skillbars Start -->
+                <div class="content-block">
+                  <div class="skillbars">
+                    <!-- Skillbar single item -->
+                    <div class="show-skillbar">
+                      <div class="skillbar light" data-percent="96">
+                        <span class="skillbar-title light">UI/UX Design</span>
+                        <p class="skillbar-bar light" style="width: 96%;"></p>
+                        <span class="skill-bar-percent light">96%</span>
+                      </div>
+                    </div>
+                    <!-- Skillbar single item -->
+                    <div class="show-skillbar">
+                      <div class="skillbar light" data-percent="84">
+                        <span class="skillbar-title light">Branding</span>
+                        <p class="skillbar-bar light" style="width: 84%;"></p>
+                        <span class="skill-bar-percent light">90%</span>
+                      </div>
+                    </div>
+                    <!-- Skillbar single item -->
+                    <div class="show-skillbar">
+                      <div class="skillbar light" data-percent="90">
+                        <span class="skillbar-title light">3D Modeling</span>
+                        <p class="skillbar-bar light" style="width: 90%;"></p>
+                        <span class="skill-bar-percent light">87%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Inner Content Block Skillbars End -->
+
+              </div>
+            </div>
+            <!-- Inner Section Info Part End -->
+
+            <!-- Inner Section Media Part Start -->
+            <div class="col-12 col-xl-6 inner__media">
+              <div class="media-container">
+
+                <!-- Inner Illustration Image Start -->
+                <div class="image about-image">
+                  <!--<div class="color-layer color-layer-dark"></div>-->
+                  <!-- About image bottom caption -->
+                  <div class="image-caption opposite">
+                    <p>
+                      Lost in Space
+                      <span>Editorial / Render</span>
+                    </p>
+                  </div>
+                </div>
+                <!-- Inner Illustration Image End -->
+                
+              </div>
+            </div>
+            <!-- Inner Section Media Part End -->
+
+          </div>
+        </div>
+      </div>
+      <!-- Inner Section Content End -->
+
+    </section>
+    <!-- About Section End -->
+
+    <!-- Works Section Start -->
+    <section id="works" class="inner works">
+
+      <!-- Inner Section Content Start -->
+      <div class="inner__content fullheight">
+        <div class="container-fluid px-0 fullheight">
+          <div class="row gx-0 flex-xl-row-reverse fullheight">
+
+            <!-- Inner Section Info Part Start -->
+            <div class="col-12 col-xl-6 inner__info">
+              <div class="blocks-container">
+
+                <!-- Inner Content Block Title Start -->
+                <div class="content-block">
+                  <span class="block__subtitle">02 / Projects</span>
+                  <h2 class="block__title">We are creating unique staff. Meet our featured projects.</h2>
+                  <p class="block__text">Be what you would seem to be - or, if you'd like it put more simply - never <a href="#0" class="text-link">imagine yourself</a> not to be otherwise than 
+                    what it might appear to others that what you were or might have been was not otherwise than what you had been would have appeared to them to be otherwise.
+                  </p>
+                </div>
+                <!-- Inner Content Block Title End -->
+
+                <!-- Inner Content Block Skillbars Start -->
+                <div class="content-block">
+                  <div class="container-fluid px-0">
+                    <div class="row gx-5">
+                      <!-- Feature single item -->
+                      <div class="col-12 col-sm-6 d-flex justify-content-start align-items-center features__item">
+                        <img src="{{ url_for('static', filename='img/features/feature-icon-1.svg') }}" alt="Ignite Template Feature">
+                        <h3>Eye catching<br>design</h3>
+                      </div>
+                      <!-- Feature single item -->
+                      <div class="col-12 col-sm-6 d-flex justify-content-start align-items-center features__item">
+                        <img src="{{ url_for('static', filename='img/features/feature-icon-2.svg') }}" alt="Ignite Template Feature">
+                        <h3>Trendy colors<br>and fonts</h3>
+                      </div>
+                      <!-- Feature single item -->
+                      <div class="col-12 col-sm-6 d-flex justify-content-start align-items-center features__item">
+                        <img src="{{ url_for('static', filename='img/features/feature-icon-3.svg') }}" alt="Ignite Template Feature">
+                        <h3>Smooth section<br>transitions</h3>
+                      </div>
+                      <!-- Feature single item -->
+                      <div class="col-12 col-sm-6 d-flex justify-content-start align-items-center features__item">
+                        <img src="{{ url_for('static', filename='img/features/feature-icon-4.svg') }}" alt="Ignite Template Feature">
+                        <h3>Ready-to-use<br>contact form</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Inner Content Block Skillbars End -->
+
+              </div>
+            </div>
+            <!-- Inner Section Info Part End -->
+
+            <!-- Inner Section Media Part Start -->
+            <div class="col-12 col-xl-6 inner__media">
+              <div class="media-container portfolio-container">
+
+                <div class="container-fluid px-0 inner__gallery">
+                  <div class="row gx-0 my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+
+                    <!-- Works Gallery Single Item Start -->
+                    <figure class="col-12 col-sm-6 my-gallery__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                      <a href="img/works/1000x1200-works-1.webp" data-image="static/img/works/1000x1200-works-1.webp" class="my-gallery__link" itemprop="contentUrl" data-size="1000x1200">
+                        <img src="{{ url_for('static', filename='img/works/1000x1200-works-1.webp')}}" class="my-gallery__image" itemprop="thumbnail" alt="Image description">
+                      </a>
+                      <figcaption class="my-gallery__description" itemprop="caption description">
+                        <h4>Glossy Wave
+                          <small>Editorial / Render</small>
+                        </h4>
+                        <p>Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio,
+                          a mollis ipsum tristique eu.
+                        </p>
+                      </figcaption>
+                    </figure>
+                    <!-- Works Gallery Single Item End -->
+
+                    <!-- Works Gallery Single Item Start -->
+                    <figure class="col-12 col-sm-6 my-gallery__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                      <a href="{{ url_for('static', filename='img/works/1000x1200-works-2.webp') }}" data-image="static/img/works/1000x1200-works-2.webp" class="my-gallery__link" itemprop="contentUrl" data-size="1000x1200">
+                        <img src="{{ url_for('static', filename='img/works/1000x1200-works-2.webp') }}" class="my-gallery__image" itemprop="thumbnail" alt="Image description">
+                      </a>
+                      <figcaption class="my-gallery__description opposite" itemprop="caption description">
+                        <h4 class="opposite">Alien Sphere
+                          <small>Projects / Illustration</small>
+                        </h4>
+                        <p>Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio,
+                          a mollis ipsum tristique eu.
+                        </p>
+                      </figcaption>
+                    </figure>
+                    <!-- Works Gallery Single Item End -->
+
+                    <!-- Works Gallery Single Item Start -->
+                    <figure class="col-12 col-sm-6 my-gallery__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                      <a href="{{ url_for('static', filename='img/works/1000x1200-works-3.webp') }}" data-image="static/img/works/1000x1200-works-3.webp" class="my-gallery__link" itemprop="contentUrl" data-size="1000x1200">
+                        <img src="{{ url_for('static', filename='img/works/1000x1200-works-3.webp') }}" class="my-gallery__image" itemprop="thumbnail" alt="Image description">
+                      </a>
+                      <figcaption class="my-gallery__description opposite" itemprop="caption description">
+                        <h4 class="opposite">Random Blocks
+                          <small>Editorial / Render</small>
+                        </h4>
+                        <p>Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio,
+                          a mollis ipsum tristique eu.
+                        </p>
+                      </figcaption>
+                    </figure>
+                    <!-- Works Gallery Single Item End -->
+
+                    <!-- Works Gallery Single Item Start -->
+                    <figure class="col-12 col-sm-6 my-gallery__item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                      <a href="{{ url_for('static', filename='img/works/1000x1200-works-4.webp') }}" data-image="static/img/works/1000x1200-works-4.webp" class="my-gallery__link" itemprop="contentUrl" data-size="1000x1200">
+                        <img src="{{ url_for('static', filename='img/works/1000x1200-works-4.webp') }} " class="my-gallery__image" itemprop="thumbnail" alt="Image description">
+                      </a>
+                      <figcaption class="my-gallery__description " itemprop="caption description">
+                        <h4>Cute Robot
+                          <small>Projects / Photography</small>
+                        </h4>
+                        <p>Mauris porttitor lobortis ligula, quis molestie lorem scelerisque eu. Morbi aliquam enim odio,
+                          a mollis ipsum tristique eu.
+                        </p>
+                      </figcaption>
+                    </figure>
+                    <!-- Works Gallery Single Item End -->
+
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <!-- Inner Section Media Part End -->
+
+          </div>
+        </div>
+      </div>
+      <!-- Inner Section Content End -->
+
+    </section>
+    <!-- Works Section End -->
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="inner contact">
+
+      <!-- Inner Section Content Start -->
+      <div class="inner__content fullheight">
+        <div class="container-fluid px-0 fullheight">
+          <div class="row gx-0 flex-xl-row-reverse fullheight">
+
+            <!-- Inner Section Info Part Start -->
+            <div class="col-12 col-xl-6 inner__info">
+              <div class="blocks-container">
+
+                <!-- Inner Content Block Title Start -->
+                <div class="content-block">
+                  <span class="block__subtitle">03 / Contact</span>
+                  <h2 class="block__title">Let's get in touch. Welcome to the new office.</h2>
+                  <p class="block__text">Our website is under construction but we are ready to go! You can <a href="tel:+12127089400" class="text-link">call us</a> or leave a request here. 
+                    We are always glad to see you in our office from <span>9:00</span> to <span>18:00</span>.
+                  </p>
+                </div>
+                <!-- Inner Content Block Title End -->
+
+                <!-- Inner Content Block Skillbars Start -->
+                <div class="content-block">
+                  <div class="container-fluid px-0">
+                    <div class="row gx-5">
+                      <!-- contact data item -->
+                      <div class="col-12 col-md-4 contactdata__item">
+                        <h5 class="contactdata__title">Location</h5>
+                        <div class="contactdata__descr d-flex align-items-start">
+                          <div class="contactdata__icon">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                          </div>
+                          <div class="contactdata__text">
+                            <p><a class="contact-link" href="https://goo.gl/maps/nWXKpGaDPuyH6gxRA" target="_blank">11 West 53 Street,<br>New York, NY 10019</a></p>
+                          </div>
+                        </div>
+                        <div class="contactdata__descr d-flex align-items-start">
+                          <div class="contactdata__icon">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                          </div>
+                          <div class="contactdata__text">
+                            <p><a class="contact-link" href="https://goo.gl/maps/xap5o3MZBuC6DFHz8" target="_blank">3400 Broadway,<br>Oakland, CA 94611</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- contact data item -->
+                      <div class="col-12 col-md-4 contactdata__item">
+                        <h5 class="contactdata__title">Contact</h5>
+                        <div class="contactdata__descr d-flex align-items-start">
+                          <div class="contactdata__icon">
+                            <i class="fa-solid fa-phone"></i>
+                          </div>
+                          <div class="contactdata__text">
+                            <p>
+                              <a class="contact-link" href="tel:+12127089400">+1 212-708-9400</a>
+                              <br>
+                              <a class="contact-link" href="tel:+15104570211">+1 510-457-0211</a>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="contactdata__descr d-flex align-items-start">
+                          <div class="contactdata__icon">
+                            <i class="fa-solid fa-envelope"></i>
+                          </div>
+                          <div class="contactdata__text">
+                            <a class="contact-link" href="mailto:example@example.com?subject=Message%20from%20your%20site">hello@ignite.com</a>
+                            <br>
+                            <a class="contact-link" href="mailto:example@example.com?subject=Message%20from%20your%20site">help@ignite.com</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- contact data item -->
+                      <div class="col-12 col-md-4 contactdata__item">
+                        <h5 class="contactdata__title">Follow us</h5>
+                        <div class="contactdata__descr d-flex align-items-start">
+                          <ul class="contactdata__socials">
+                            <li>
+                              <i class="fa-brands fa-facebook"></i>
+                              <a class="contact-link" href="https://www.facebook.com/" target="_blank">Facebook</a>
+                            </li>
+                            <li>
+                              <i class="fa-brands fa-instagram"></i>
+                              <a class="contact-link" href="https://www.instagram.com/" target="_blank">Instagram</a>
+                            </li>
+                            <li>
+                              <i class="fa-brands fa-twitter"></i>
+                              <a class="contact-link" href="https://twitter.com/" target="_blank">Twitter</a>
+                            </li>
+                            <li>
+                              <i class="fa-brands fa-pinterest"></i>
+                              <a class="contact-link" href="https://pinterest.com/" target="_blank">Pinterest</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Inner Content Block Skillbars End -->
+
+              </div>
+            </div>
+            <!-- Inner Section Info Part End -->
+
+            <!-- Inner Section Media Part Start -->
+            <div class="col-12 col-xl-6 inner__media">
+              <div class="media-container">
+
+                <!-- Inner Illustration Image Start -->
+                <div class="image contact-image">
+                  <!--<div class="color-layer color-layer-dark"></div>-->
+                  <!-- contact image bottom caption -->
+                  <div class="image-caption">
+                    <p>
+                      Imagination Flight
+                      <span>Editorial / Render</span>
+                    </p>
+                  </div>
+                </div>
+                <!-- Inner Illustration Image End -->
+                
+              </div>
+            </div>
+            <!-- Inner Section Media Part End -->
+
+          </div>
+        </div>
+      </div>
+      <!-- Inner Section Content End -->
+
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Desktop Start -->
+    <footer id="footer" class="footer-desktop full">
+      <div class="container-fluid px-0 fullheight">
+        <div class="row gx-0 fullheight">
+          <div class="col-6 footer-desktop__left fullheight">
+            <div class="container-desktop d-flex fullheight justify-content-start align-items-center">
+              <!-- Home screen socials links -->
+              <ul class="socials">
+                <li>
+                  <a class="btn btn-s-text" href="https://www.facebook.com/" target="_blank">
+                    <span class="title">Fb</span>
+                    <span class="hover">Fb</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="btn btn-s-text" href="https://www.instagram.com" target="_blank">
+                    <span class="title">In</span>
+                    <span class="hover">In</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="btn btn-s-text" href="https://twitter.com/" target="_blank">
+                    <span class="title">Tw</span>
+                    <span class="hover">Tw</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="btn btn-s-text" href="https://www.behance.net/" target="_blank">
+                    <span class="title">Be</span>
+                    <span class="hover">Be</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-6 footer-desktop__right fullheight">
+            <div class="container-desktop fullheight d-flex justify-content-end align-items-center">
+              <p class="copyright bright">
+                <i class="fa-regular fa-copyright"></i>
+                <a class="contact-link" href="https://1.envato.market/EKA9WD" target="_blank">Mix Design</a>,
+                2024
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Desktop End -->
+
+    <!-- Notify Popup Start -->
+    <div id="notify" class="popup notify">
+      <div class="popup__container">
+
+        <!-- Popup Content Start -->
+        <div class="popup__content block-rounded-s">
+
+          <!-- popup close button -->
+          <a href="#0" id="notify-close" class="popup-close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+
+          <!-- Notify Popup Title Start -->
+          <div class="popup-title">
+            <p class="popup-title__title">Get to know about our launch</p>
+            <p class="popup-title__text">Subscribe to our newsletter and we will send you a notification about the launch of our brand new site</p>
+          </div>
+          <!-- Notify Popup Title End -->
+
+          <!-- Notify Form Container Start -->
+          <div class="form-container">
+
+            <!-- Reply Messages Start-->
+            <div class="reply-group subscription-ok">
+              <i class="fa-solid fa-circle-check reply-group__icon"></i>
+              <p class="reply-group__title txt-light">Done!</p>
+              <span class="reply-group__text">Thanks for subscribing. We will send you a notification about our launch.</span>
+            </div>
+            <div class="reply-group subscription-error">
+              <i class="fa-solid fa-face-frown-open reply-group__icon"></i>
+              <p class="reply-group__title">Ooops!</p>
+              <span class="reply-group__text">Something went wrong. Please try again later.</span>
+            </div>
+            <!-- Reply Messages End-->
+
+            <!-- Notify Contact Form Start-->
+            <form class="form notify-form form-light">
+              <input class="margin-l" type="email" placeholder="Your Email" required>
+              <button class="btn btn-l btn-light" type="submit">
+                <span class="btn-title">Submit</span>
+                <span class="btn-hover">Submit</span>
+              </button>
+            </form>
+            <!-- Notify Contact Form End-->
+
+          </div>
+          <!-- Notify Form Container End -->
+
+        </div>
+        <!-- Popup Content End -->
+
+      </div>
+    </div>
+    <!-- Notify Popup End -->
+
+    <!-- Say Hello Popup Start -->
+    <div id="sayhello" class="popup sayhello">
+      <div class="popup__container">
+
+        <!-- Popup Content Start -->
+        <div class="popup__content block-rounded-s">
+
+          <!-- popup close button -->
+          <a href="#0" id="sayhello-close" class="popup-close">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+
+          <!-- Say Hello Popup Title Start -->
+          <div class="popup-title">
+            <p class="popup-title__title">Let's talk!</p>
+          </div>
+          <!-- Say Hello Popup Title End -->
+
+          <!-- Say Hello Form Container Start -->
+          <div class="form-container">
+
+            <!-- Reply Messages Start-->
+            <div class="reply-group">
+              <i class="fa-solid fa-circle-check reply-group__icon"></i>
+              <p class="reply-group__title">Done!</p>
+              <span class="reply-group__text">Thanks for your message. We will get back as soon as possible</span>
+            </div>
+            <!-- Reply Messages End-->
+
+            <!-- Contact Form Start -->
+            <form class="form form-light sayhello-form" id="sayhello-form">
+              <!-- Hidden Required Fields -->
+              <input type="hidden" name="project_name" value="Ignite - Coming Soon and Landing Page Template">
+              <input type="hidden" name="admin_email" value="support@mixdesign.club">
+              <input type="hidden" name="form_subject" value="Contact Form Message">
+              <!-- END Hidden Required Fields-->
+              <div class="container-fluid px-0">
+                <div class="row gx-5">
+                  <div class="col-12 col-md-6">
+                    <input class="" type="text" name="Name" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <input class="" type="text" name="Company" placeholder="Your Email" required>
+                  </div>
+                  <div class="col-12">
+                    <textarea class="margin-l" name="Message" placeholder="A Few Words" required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-l btn-light" type="submit">
+                      <span class="btn-title">Send</span>
+                      <span class="btn-hover">Send</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!-- Contact Form End  -->
+
+          </div>
+          <!-- Say Hello Form Container End -->
+
+        </div>
+        <!-- Popup Content End -->
+
+      </div>
+    </div>
+    <!-- Say Hello Popup End -->
+
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+      <!-- Background of PhotoSwipe.
+      It's a separate element, as animating opacity is faster than rgba(). -->
+      <div class="pswp__bg"></div>
+
+      <!-- Slides wrapper with overflow:hidden. -->
+      <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+          <div class="pswp__top-bar">
+
+            <!--  Controls are self-explanatory. Order can be changed. -->
+
+            <div class="pswp__counter"></div>
+
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader-active when preloader is running -->
+            <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <script>
+      // Function to handle file upload
+      document.getElementById('upload-trigger').addEventListener('click', function() {
+          document.getElementById('image-upload').click();
+      });
+
+      // Function to handle file selection and classification
+      document.getElementById('image-upload').addEventListener('change', function(event) {
+          var file = event.target.files[0];
+          if (file) {
+              var formData = new FormData();
+              formData.append('image', file);
+              
+              // Send the uploaded image to the backend for classification
+              fetch('/classify', {
+                  method: 'POST',
+                  body: formData
+              })
+              .then(response => response.json())
+              .then(data => {
+                  // Display the classification result
+                  document.getElementById('classification-result').innerText = data.result;
+              })
+              .catch(error => console.error('Error:', error));
+          }
+      });
+    </script>
+    <!-- Load Scripts Start -->
+    <script src="{{ url_for('static', filename='js/libs.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+  </body>
+    <!-- Load Scripts End -->
+
+  </body>
+
+</html>

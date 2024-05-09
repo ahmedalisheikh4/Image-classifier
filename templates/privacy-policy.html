@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Privacy Policy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../../css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <!-- Preloader-->
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+        <div class="preloader-dot"></div>
+      </div>
+    </div>
+    <div class="page">
+      <!--RD Navbar-->
+      <header class="section rd-navbar-wrap">
+        <nav class="rd-navbar">
+          <div class="navbar-container">
+            <div class="navbar-cell">
+              <div class="navbar-panel">
+                <button class="navbar-switch" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+                <div class="navbar-logo"><a class="navbar-logo-link" href="{{ url_for('index') }}"><img class="navbar-logo-default" src="{{ url_for('static', filename='images/logo-default-113x30.svg') }}" alt="Neon" width="113" height="30" loading="lazy"><img class="navbar-logo-inverse" src="{{ url_for('static', filename='images/logo-inverse-112x30.svg') }}" alt="Neon" width="112" height="30" loading="lazy"></a></div>
+              </div>
+            </div>
+            <div class="navbar-spacer"></div>
+            <div class="navbar-cell navbar-sidebar">
+              <ul class="navbar-navigation rd-navbar-nav fullpage-navigation">
+                <li class="navbar-navigation-root-item" data-menuanchor="ndex.html"><a class="navbar-navigation-root-link" href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li class="navbar-navigation-root-item active" data-menuanchor="estimonials.html"><a class="navbar-navigation-root-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+                </li>
+                <li class="navbar-navigation-root-item active" data-menuanchor="estimonials.html"><a class="navbar-navigation-root-link" href="{{ url_for('testimonials_2') }}">Testimonials 2</a>
+                </li>
+                <li class="navbar-navigation-root-item active" data-menuanchor=""><a class="navbar-navigation-root-link" href="#">Pages</a>
+                  <ul class="navbar-navigation-dropdown rd-navbar-dropdown">
+                    <li class="navbar-navigation-back">
+                      <button class="navbar-navigation-back-btn">Back</button>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('page_404') }}">404 page</a>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('coming_soon') }}">Coming soon</a>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('faq') }}">FAQ</a>
+                    </li>
+                    <li class="navbar-navigation-dropdown-item"><a class="navbar-navigation-dropdown-link" href="{{ url_for('privacy_policy') }}">Privacy Policy</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="navbar-cell">
+              <div class="navbar-subpanel">
+                <div class="navbar-subpanel-item">
+                  <button class="navbar-button navbar-info-button mdi-dots-vertical" data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+                  <div class="navbar-info">
+                    <button class="btn btn-sm" data-modal-trigger='{"target":"#modal-login"}'>Get App</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section class="section section-lg section-one-screen">
+        <div class="container">
+          <h2 class="text-center">Privacy Policy</h2>
+          <div class="row row-offset-sm row-30 justify-content-center accordion">
+            <div class="col-lg-6">
+              <!-- Accordion-->
+              <article class="accordion-item active">
+                <button class="accordion-head"><span class="accordion-title h5">General Information</span><span class="accordion-icon"><span class="icon icon-circle icon-sm icon-style-2 mdi-plus"></span></span></button>
+                <div class="accordion-body">
+                  <div class="accordion-text">Welcome to our Privacy Policy page! When you use our web site services, you trust us with your information. This Privacy Policy is meant to help you understand what data we collect, why we collect it, and what we do with it. When you share information with us, we can make our services even better for you. For instance, we can show you more relevant search results and ads, help you connect with people or to make sharing with others quicker and easier. As you use our services, we want you to be clear how we’re using information and the ways in which you can protect your privacy. This is important; we hope you will take time to read it carefully. Remember, you can find controls to manage your information and protect your privacy and security. We’ve tried to keep it as simple as possible.</div>
+                </div>
+              </article>
+              <!-- Accordion-->
+              <article class="accordion-item">
+                <button class="accordion-head"><span class="accordion-title h5">Right to Access, Correct and Delete Data</span><span class="accordion-icon"><span class="icon icon-circle icon-sm icon-style-2 mdi-plus"></span></span></button>
+                <div class="accordion-body">
+                  <div class="accordion-text">Our customers have the right to access, correct and delete personal data relating to them, and to object to the processing of such data, by addressing a written request, at any time. The Company makes every effort to put in place suitable precautions to safeguard the security and privacy of personal data, and to prevent it from being altered, corrupted, destroyed or accessed by unauthorized third parties. However, the Company does not control each and every risk related to the use of the Internet, and therefore warns the Site users of the potential risks involved in the functioning and use of the Internet. The Site may include links to other web sites or other internet sources. As the Company cannot control these web sites and external sources, the Company cannot be held responsible for the provision or display of these web sites and external sources, and may not be held liable for the content, advertising, products, services or any other material available on or from these web sites or external sources.</div>
+                </div>
+              </article>
+              <!-- Accordion-->
+              <article class="accordion-item">
+                <button class="accordion-head"><span class="accordion-title h5">Management of Personal Data</span><span class="accordion-icon"><span class="icon icon-circle icon-sm icon-style-2 mdi-plus"></span></span></button>
+                <div class="accordion-body">
+                  <div class="accordion-text">You can view or edit your personal data online for many of our services. You can also make choices about our collection and use of your data. How you can access or control your personal data will depend on which services you use. You can choose whether you wish to receive promotional communications from our web site by email, SMS, physical mail, and telephone. If you receive promotional email or SMS messages from us and would like to opt out, you can do so by following the directions in that message. You can also make choices about the receipt of promotional email, telephone calls, and postal mail by visiting and signing into Company Promotional Communications Manager, which allows you to update contact information, manage contact preferences, opt out of email subscriptions, and choose whether to share your contact information with our partners. These choices do not apply to mandatory service communications that are part of certain web site services.</div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Modal-->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <h3>Log In</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+            <form class="rd-mailform">
+              <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="Your name *" data-constraints="@Required">
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password *" data-constraints="@Required">
+              </div>
+              <div class="offset-xxs group-40 d-flex flex-wrap flex-xs-nowrap align-items-center">
+                <button class="btn btn-block" type="submit">Log in</button>
+              </div>
+            </form>
+          </div>
+          <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/core.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
